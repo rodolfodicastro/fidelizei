@@ -1,0 +1,15 @@
+body,html{
+    height: 100%;
+    width: 95%;
+}
+
+.container{
+    text-align: center;
+    background-color: rgb(83, 78, 78);
+    height: 100%;
+    width: 100%;
+}
+.btn{
+    background-color: yellow;
+    font-weight: 600;
+}
