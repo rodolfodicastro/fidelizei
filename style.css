@@ -10,6 +10,6 @@ body,html{
     width: 100%;
 }
 .btn{
-    background-color: yellow;
+    background-color: rgb(180, 180, 0);
     font-weight: 600;
 }
