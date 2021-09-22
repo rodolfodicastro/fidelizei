@@ -37,6 +37,7 @@ function pesquisar(){
     telefone=inputTelefone.value
     if(telefone==""){
         alert("Digite seu Telefone") 
+ 
         return
     }
 
@@ -50,6 +51,7 @@ function pesquisar(){
             pontosTD.innerText=compraAtual.pontos
             table.appendChild(minhaTR)
         }
+
     }
 
 
@@ -92,6 +94,7 @@ alert("Incluido com Sucesso")
 btnPesquisar.addEventListener("click",pesquisar)
 
 
-
 btnIncluir.addEventListener("click",incluir)
+
+// btnExcluir.addEventListener("click",excluir)
 
