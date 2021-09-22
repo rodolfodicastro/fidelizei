@@ -1,17 +1,17 @@
 var mockData=[
     {
         id:8190001,
-        dataCompra: "00/11/0000",
+        dataCompra: "05/11/2021",
         pontos: 1
     },
     {
         id:8190002,
-        dataCompra: "00/11/0002",
+        dataCompra: "10/11/2021",
         pontos: 1
     },
     {
         id:8190003,
-        dataCompra: "00/11/0003",
+        dataCompra: "14/11/2021",
         pontos: 1
     }
 ]
@@ -19,20 +19,9 @@ var mockData=[
 
 var inputTelefone = document.querySelector("#telefone")
 var btnPesquisar = document.querySelector("#pesquisar") 
+var table = document.querySelector("#tabelaDeCompras") 
 var telefone=""
-
-function pesquisarNaLista(item){
-console.log(item)
-    if ((item.id+"")==telefone){
-
-        return true
-    }
-    else {
-        return false
-    }
-
-
-}
+var template="<tr> <td>@dataCompra</td> <td>@pontos</td> </tr>"
 
 function pesquisar(){
     
@@ -41,9 +30,22 @@ function pesquisar(){
         alert("Digite seu Telefone") 
         return
     }
-var dadosEncontrados = mockData.filter(pesquisarNaLista)
-console.log(dadosEncontrados)    
+
+    var tomanhoDaMinhaLista = mockData.length
+    var oCaraQueFoiEncontrado
+    for(interator = 0; tomanhoDaMinhaLista > interator; interator = interator+1){
+       
+        var compraAtual = mockData[interator]
+        if(compraAtual.id ==telefone){
+            oCaraQueFoiEncontrado = compraAtual
+        }
+    }
+
+    console.log(oCaraQueFoiEncontrado)
+
+
 }
+
 
 
 
