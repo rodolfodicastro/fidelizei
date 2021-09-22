@@ -19,6 +19,7 @@ var mockData=[
 
 var inputTelefone = document.querySelector("#telefone")
 var btnPesquisar = document.querySelector("#pesquisar") 
+var btnIncluir = document.querySelector("#incluir") 
 var table = document.querySelector("#tabelaDeCompras") 
 var telefone=""
 var template
@@ -52,12 +53,45 @@ function pesquisar(){
     }
 
 
+}
+
+function incluir(){
+    
+    telefone=inputTelefone.value
+    if(telefone==""){
+        alert("Digite seu Telefone") 
+        return
+    }
+    var tomanhoDaMinhaLista = mockData.length
+    for(interator = 0; tomanhoDaMinhaLista > interator; interator = interator+1){
+       
+        var compraAtual = mockData[interator]
+        if(compraAtual.id ==telefone){
+        compraAtual.pontos=compraAtual.pontos+1
+        inputTelefone.value=""
+        alert("Adicionado com Sucesso") 
+        return
+        }
+    }
 
 
+    var dataAtual= new Date()
+    var dataAtualFormatada = dataAtual.getDate()+"/"+(dataAtual.getMonth()+1)+"/"+dataAtual.getFullYear()
+    var compraAtual={
+        id:telefone,
+        dataCompra: dataAtualFormatada,
+        pontos: 1
+    }
+
+mockData.push(compraAtual)
+inputTelefone.value=""
+alert("Incluido com Sucesso")
 }
 
 
-
-
 btnPesquisar.addEventListener("click",pesquisar)
+
+
+
+btnIncluir.addEventListener("click",incluir)
 
