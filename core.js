@@ -41,18 +41,31 @@ function pesquisar(){
         return
     }
 
-    var tomanhoDaMinhaLista = mockData.length
+fetch('http://localhost:3000/compras/'+telefone)
+  .then((response) => {
+    return response.json();
+  })
+  .then((compraAtual) => {
+      if (compraAtual.dataCompra != undefined){
+        dataTD.innerText=compraAtual.dataCompra
+        pontosTD.innerText=compraAtual.pontos
+        table.appendChild(minhaTR);
+      }
+  });
 
-    for(interator = 0; tomanhoDaMinhaLista > interator; interator = interator+1){
+
+    // var tomanhoDaMinhaLista = mockData.length
+
+    // for(interator = 0; tomanhoDaMinhaLista > interator; interator = interator+1){
        
-        var compraAtual = mockData[interator]
-        if(compraAtual.id ==telefone){
-            dataTD.innerText=compraAtual.dataCompra
-            pontosTD.innerText=compraAtual.pontos
-            table.appendChild(minhaTR)
-        }
+    //     var compraAtual = mockData[interator]
+    //     if(compraAtual.id ==telefone){
+    //         dataTD.innerText=compraAtual.dataCompra
+    //         pontosTD.innerText=compraAtual.pontos
+    //         table.appendChild(minhaTR)
+    //     }
 
-    }
+    // }
 
 
 }
